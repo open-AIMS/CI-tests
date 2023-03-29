@@ -29,7 +29,10 @@ jobs:
       - name: Execute Script
         run: |
           Rscript "scripts/test.R"
-
+      - name: Build page
+        run: |
+          quarto render docs/test.qmd
+        
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
