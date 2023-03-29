@@ -46,16 +46,19 @@ jobs:
             any::rmarkdown
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-      - name: Build page
+      - name: Execute R Scripts
         run: |
-          quarto render docs/tests.qmd
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: 'docs/'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          make code_local
+      #- name: Build page
+      #  run: |
+      #    quarto render docs/tests.qmd
+      #- name: Setup Pages
+      #  uses: actions/configure-pages@v3
+      #- name: Upload artifact
+      #  uses: actions/upload-pages-artifact@v1
+      #  with:
+      #    # Upload entire repository
+      #    path: 'docs/'
+      #- name: Deploy to GitHub Pages
+      #  id: deployment
+      #  uses: actions/deploy-pages@v2
