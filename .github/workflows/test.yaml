@@ -24,7 +24,8 @@ jobs:
             any::tidyr
             any::readr
             any::knitr
-
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
       - name: Execute Script
         run: |
           Rscript "scripts/test.R"
