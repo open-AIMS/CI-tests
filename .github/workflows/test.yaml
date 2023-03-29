@@ -24,6 +24,7 @@ jobs:
             any::tidyr
             any::readr
             any::knitr
+            any::tidyverse
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - name: Execute Script
