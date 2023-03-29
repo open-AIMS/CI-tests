@@ -1,0 +1,20 @@
+DOCS_SRC_DIR  = $(addprefix , docs)
+ifdef FILE
+DOCS_FILE = $(DOCS_SRC_DIR)/$(FILE)
+else
+DOCS_FILE ?= $(foreach sdir, $(DOCS_SRC_DIR), $(wildcard $(sdir)/*.qmd))
+endif
+
+HTML_FILE := _site/index.html
+
+$(info ************************************)
+$(info DOCS Source directory:     $(DOCS_SRC_DIR))
+$(info DOCS Source files:         $(DOCS_FILE))
+$(info HTML Output file:          $(HTML_FILE))
+$(info $(PWD))
+$(info ************************************)
+
+$(HTML_FILE) : %.html : $(DOCS_FILE)
+	@echo "Compiling documntation for analyses"
+	$(info Source = $<; Destination = $@)
+	quarto render docs
