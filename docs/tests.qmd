@@ -4,6 +4,7 @@ author: "AIMS Stats Team"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 format:
   html:
+    code-fold: false
 ---
 
 # Section 1
