@@ -1,0 +1,10 @@
+---
+title: "Model tests"
+author: "AIMS Stats Team"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+format:
+  html:
+---
+
+# Section 1
+This is a _test_
