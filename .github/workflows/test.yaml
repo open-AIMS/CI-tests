@@ -31,7 +31,7 @@ jobs:
           Rscript "scripts/test.R"
       - name: Build page
         run: |
-          quarto render docs/test.qmd
+          quarto render docs/tests.qmd
         
       - name: Commit results
         run: |
